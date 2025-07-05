@@ -1,0 +1,31 @@
+{
+  "name": "romantic-animations",
+  "version": "1.0.0",
+  "description": "Romantic animations like hearts, sparkles, trails",
+  "homepage": "https://github.com/sarthak03dot/romantic-animations#readme",
+  "bugs": {
+    "url": "https://github.com/sarthak03dot/romantic-animations/issues"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarthak03dot/romantic-animations.git"
+  },
+  "license": "ISC",
+  "keywords": [
+    "romantic",
+    "heart",
+    "animation",
+    "canvas"
+  ],
+  "author": "Sarthak Singh",
+  "type": "commonjs",
+  "main": "vite.config.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^7.0.2"
+  }
+}
