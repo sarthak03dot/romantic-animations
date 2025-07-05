@@ -1,11 +1,10 @@
 {
-  "name": "romantic-animations",
-  "version": "1.0.0",
+"name": "@sarthak03dot/romantic-animations",
+  "version": "1.0.2",
   "description": "Romantic animations like hearts, sparkles, trails",
   "homepage": "https://github.com/sarthak03dot/romantic-animations#readme",
   "bugs": {
     "url": "https://github.com/sarthak03dot/romantic-animations/issues"
-    
   },
   "repository": {
     "type": "git",

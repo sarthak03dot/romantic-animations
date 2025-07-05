@@ -2,12 +2,14 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'demo',              // 👈 sets 'demo' as root
   build: {
-    outDir: '../dist',
-    emptyOutDir: true,
-  },
-  server: {
-    open: true
+    lib: {
+      entry: 'src/index.js',
+      name: 'RomanticAnimations', // this becomes window.RomanticAnimations
+      fileName: 'romantic-animations',
+      formats: ['umd']
+    },
+    outDir: 'dist',
+    emptyOutDir: true
   }
 });

@@ -24,33 +24,40 @@
       button {
         margin: 5px;
         padding: 10px;
+        cursor: pointer;
+        background: pink;
+        border: none;
+        border-radius: 8px;
       }
     </style>
   </head>
   <body>
     <div class="btns">
-      <button onclick="startFloatingHearts('animation-container')">
+      <button
+        onclick="RomanticAnimations.startFloatingHearts('animation-container')"
+      >
         Floating Hearts
       </button>
-      <button onclick="startHeartTrail('animation-container')">
+      <button
+        onclick="RomanticAnimations.startHeartTrail('animation-container')"
+      >
         Heart Trail
       </button>
-      <button onclick="startHeartBurst('animation-container')">
+      <button
+        onclick="RomanticAnimations.startHeartBurst('animation-container')"
+      >
         Heart Burst
       </button>
     </div>
 
     <div id="animation-container"></div>
 
-    <script type="module">
-      import {
-        startFloatingHearts,
-        startHeartTrail,
-        startHeartBurst,
-      } from "../src/index.js";
+    <!-- Load your UMD build -->
+    <script src="/dist/romantic-animations.umd.js"></script>
 
-      // Default on load
-      startFloatingHearts("animation-container");
+    <script>
+      //  Start one by default on page load
+      RomanticAnimations.startFloatingHearts("animation-container");
     </script>
   </body>
 </html>
