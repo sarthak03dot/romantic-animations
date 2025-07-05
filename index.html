@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romantic Animations CDN Demo</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      overflow: hidden;
+    }
+    #animation-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    .btns {
+      position: absolute;
+      z-index: 10;
+      top: 20px;
+      left: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px;
+      border-radius: 6px;
+      background: hotpink;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="btns">
+    <button onclick="RomanticAnimations.startFloatingHearts('animation-container')">Floating Hearts</button>
+    <button onclick="RomanticAnimations.startHeartTrail('animation-container')">Heart Trail</button>
+    <button onclick="RomanticAnimations.startHeartBurst('animation-container')">Heart Burst</button>
+  </div>
+
+  <div id="animation-container"></div>
+
+  <!--  Load via jsDelivr CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@sarthak03dot/romantic-animations@1.0.3/dist/romantic-animations.umd.js"></script>
+
+  <script>
+    //  Auto start one animation on load
+    RomanticAnimations.startFloatingHearts("animation-container");
+  </script>
+</body>
+</html>
