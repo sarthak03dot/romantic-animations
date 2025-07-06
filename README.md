@@ -27,14 +27,14 @@ npm install romantic-animations
 - `demo/` – live preview setup using Vite
 - `package.json` – npm config
 
-## 🔮 Upcoming
-- 💫 Cursor heart trails
-- 🎉 Love confetti bursts
-- 🌈 Color customization
-- 🎨 Preset themes
 
 ## 🧑‍💻 Author
 Made with ❤️ by **Sarthak Singh**
 
 ## 📄 License
 MIT
+
+## Email:
+```email
+sarthak03december@gmail.com
+```
