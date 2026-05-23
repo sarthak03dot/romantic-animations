@@ -1,0 +1,57 @@
+{
+  "name": "@sarthak03dot/romantic-animations",
+  "version": "1.2.4",
+  "description": "Romantic & celebratory canvas animations — hearts, sparkles, fireworks, confetti, star fields and more. Zero dependencies.",
+  "homepage": "https://github.com/sarthak03dot/romantic-animations#readme",
+  "bugs": {
+    "url": "https://github.com/sarthak03dot/romantic-animations/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarthak03dot/romantic-animations.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "romantic",
+    "heart",
+    "animation",
+    "canvas",
+    "sparkles",
+    "confetti",
+    "fireworks",
+    "love",
+    "valentine",
+    "particle",
+    "effects",
+    "zero-dependency"
+  ],
+  "author": "Sarthak Singh <sarthak03december@gmail.com>",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "dist/romantic-animations.umd.js",
+  "module": "dist/romantic-animations.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/romantic-animations.es.js",
+      "require": "./dist/romantic-animations.umd.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:demo": "vite build --config vite.demo.config.js",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "vite": "^7.0.2"
+  }
+}
