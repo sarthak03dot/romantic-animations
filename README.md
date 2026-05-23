@@ -1,4 +1,4 @@
-# 💖 Romantic Animations v1.2.6
+# 💖 Romantic Animations v1.2.7
 
 <p align="center">
   <b>A premium, lightweight, zero-dependency JavaScript canvas particle library for gorgeous romantic & celebratory effects.</b>
@@ -28,20 +28,17 @@
 
 ---
 
-##  Gallery & Screenshots (Placeholder Previews)
-
-Here is a sneak peek at the gorgeous, performance-tuned particle renderers in action.
-*(You can swap these placeholders with your actual screenshots in `docs/screenshots/`)*
+## Gallery & Screenshots
 
 <div align="center">
   <h3>✨ Floating Hearts & Live Tweaks</h3>
- <img width="1874" height="859" alt="Image" src="https://github.com/user-attachments/assets/00c543ff-1cae-48c8-abc0-c8974d14682e" />
-  
+  <img src="https://raw.githubusercontent.com/sarthak03dot/romantic-animations/main/docs/screenshots/demo1.png" width="100%" />
+
   <h3>🎆 Starry Fireworks Celebration</h3>
- <img width="1880" height="853" alt="Image" src="https://github.com/user-attachments/assets/a4646719-aa5f-4da4-bae1-78db71d3bc09" />
-  
+  <img src="https://raw.githubusercontent.com/sarthak03dot/romantic-animations/main/docs/screenshots/demo2.png" width="100%" />
+
   <h3>📚 Integrated Live Customizer & Developer Portal</h3>
- <img width="1864" height="855" alt="Image" src="https://github.com/user-attachments/assets/dbdedabb-a04f-4544-8241-ef103a039e0d" />
+  <img src="https://raw.githubusercontent.com/sarthak03dot/romantic-animations/main/docs/screenshots/demo3.png" width="100%" />
 </div>
 
 ---

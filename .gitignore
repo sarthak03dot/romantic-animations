@@ -17,6 +17,5 @@ yarn-error.log*
 # Ignore IDE/editor files
 .vscode/
 .idea/
-package-lock.json
 # Ignore demo files (optional for npm publish)
 demo/
