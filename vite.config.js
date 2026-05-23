@@ -1,32 +1,43 @@
 import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 import { readFileSync } from 'fs';
 
-const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf-8'));
+const pkg = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url), 'utf-8')
+);
 
 export default defineConfig({
+  plugins: [
+    dts({
+      insertTypesEntry: true,
+      outDir: 'dist'
+    })
+  ],
+
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
   },
-  base: '/romantic-animations/',
+
   build: {
     lib: {
       entry: 'src/index.js',
       name: 'RomanticAnimations',
-      fileName: (format) => {
-        if (format === 'umd') return 'romantic-animations.umd.js';
-        return 'romantic-animations.es.js';
-      },
-      formats: ['umd', 'es'],
+      fileName: (format) =>
+        format === 'umd'
+          ? 'romantic-animations.umd.js'
+          : 'romantic-animations.es.js',
+      formats: ['es', 'umd'],
     },
+
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: true,
     minify: 'esbuild',
+
     rollupOptions: {
       output: {
-        // Ensure tree-shakable ESM build has correct exports
-        exports: 'named',
-      },
-    },
-  },
+        exports: 'named'
+      }
+    }
+  }
 });
