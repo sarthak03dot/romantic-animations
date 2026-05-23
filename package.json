@@ -39,13 +39,12 @@
   },
   "files": [
     "dist",
-    "src",
     "README.md"
   ],
   "sideEffects": false,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cpy src/index.d.ts dist",
     "build:demo": "vite build --config vite.demo.config.js",
     "preview": "vite preview",
     "prepublishOnly": "npm run build",
@@ -53,8 +52,8 @@
     "deploy": "gh-pages -d demo-dist"
   },
   "devDependencies": {
+    "cpy-cli": "^7.0.0",
     "gh-pages": "^6.3.0",
-    "vite": "^7.0.2",
-    "vite-plugin-dts": "^5.0.1"
+    "vite": "^7.0.2"
   }
 }

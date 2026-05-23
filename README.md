@@ -1,4 +1,4 @@
-# 💖 Romantic Animations v1.2.10
+# 💖 Romantic Animations v1.2.11
 
 <p align="center">
   <b>A premium, lightweight, zero-dependency JavaScript canvas particle library for gorgeous romantic & celebratory effects.</b>
