@@ -1,5 +1,5 @@
 /**
- * romantic-animations v2.0.0
+ * romantic-animations v2.0.1
  * ───────────────────────────────────────────────────────
  * A rich collection of canvas-based romantic & celebratory
  * animations for the web.
