@@ -29,6 +29,18 @@ import { butterflies }    from './animations/butterfly.js';
 import { magicDust }      from './animations/magicDust.js';
 import { floatingOrbs }   from './animations/floatingOrbs.js';
 import { shootingStars }  from './animations/shootingStars.js';
+import { rosePetals }     from './animations/rosePetals.js';
+import { floatingBalloons } from './animations/floatingBalloons.js';
+import { globeMovement } from './animations/globeMovement.js';
+import { cherryBlossoms } from './animations/cherryBlossoms.js';
+import { fireflies } from './animations/fireflies.js';
+import { snowStorm } from './animations/snowStorm.js';
+import { matrixRain } from './animations/matrixRain.js';
+import { autumnLeaves } from './animations/autumnLeaves.js';
+import { bubbles } from './animations/bubbles.js';
+import { blackHole } from './animations/blackHole.js';
+import { auroraBorealis } from './animations/auroraBorealis.js';
+import { lensFlares } from './animations/lensFlares.js';
 
 // Track active sessions so stopAll() can clean up everything
 const _sessions = new Map(); // containerId → { destroy, stop }
@@ -43,7 +55,7 @@ let _sessionId = 0;
  * @param {object}             options      – user options forwarded to the animation
  * @returns {number}  session id
  */
-function _run(containerId, animFn, options = {}) {
+function _run(containerId: string | HTMLElement, animFn: any, options: Record<string, any> = {}) {
   const { canvas, destroy } = initCanvas(containerId, options);
   const stop = animFn(canvas, options);
   const id = ++_sessionId;
@@ -55,7 +67,7 @@ function _run(containerId, animFn, options = {}) {
  * Stop a single animation by its session id.
  * @param {number} id – returned by a start* call
  */
-export function stopAnimation(id) {
+export function stopAnimation(id: number) {
   if (_sessions.has(id)) {
     const s = _sessions.get(id);
     if (typeof s.stop === 'function') s.stop();
@@ -91,7 +103,7 @@ export function stopAll() {
  * @param {boolean}  [options.glow=true]
  * @returns {number} session id
  */
-export function startFloatingHearts(containerId, options = {}) {
+export function startFloatingHearts(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, floatingHearts, options);
 }
 
@@ -106,7 +118,7 @@ export function startFloatingHearts(containerId, options = {}) {
  * @param {boolean}  [options.glow=true]
  * @returns {number} session id
  */
-export function startHeartTrail(containerId, options = {}) {
+export function startHeartTrail(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, heartTrail, options);
 }
 
@@ -119,7 +131,7 @@ export function startHeartTrail(containerId, options = {}) {
  * @param {boolean}  [options.glow=true]
  * @returns {number} session id
  */
-export function startHeartBurst(containerId, options = {}) {
+export function startHeartBurst(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, heartBurst, options);
 }
 
@@ -132,7 +144,7 @@ export function startHeartBurst(containerId, options = {}) {
  * @param {boolean}  [options.glow=true]
  * @returns {number} session id
  */
-export function startSparkles(containerId, options = {}) {
+export function startSparkles(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, sparkles, options);
 }
 
@@ -145,7 +157,7 @@ export function startSparkles(containerId, options = {}) {
  * @param {boolean}  [options.glow=true]
  * @returns {number} session id
  */
-export function startLoveRain(containerId, options = {}) {
+export function startLoveRain(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, loveRain, options);
 }
 
@@ -158,7 +170,7 @@ export function startLoveRain(containerId, options = {}) {
  * @param {string[]} [options.shapes]         – 'rect' | 'circle' | 'ribbon'
  * @returns {number} session id
  */
-export function startConfetti(containerId, options = {}) {
+export function startConfetti(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, confetti, options);
 }
 
@@ -171,7 +183,7 @@ export function startConfetti(containerId, options = {}) {
  * @param {boolean}  [options.glow=true]
  * @returns {number} session id
  */
-export function startFireworks(containerId, options = {}) {
+export function startFireworks(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, fireworks, options);
 }
 
@@ -185,24 +197,72 @@ export function startFireworks(containerId, options = {}) {
  * @param {number}   [options.connectDist=100] – set to 0 to disable lines
  * @returns {number} session id
  */
-export function startStarField(containerId, options = {}) {
+export function startStarField(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, starField, options);
 }
 
-export function startButterflies(containerId, options = {}) {
+export function startButterflies(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, butterflies, options);
 }
 
-export function startMagicDust(containerId, options = {}) {
+export function startMagicDust(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, magicDust, options);
 }
 
-export function startFloatingOrbs(containerId, options = {}) {
+export function startFloatingOrbs(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, floatingOrbs, options);
 }
 
-export function startShootingStars(containerId, options = {}) {
+export function startShootingStars(containerId: string | HTMLElement, options: Record<string, any> = {}) {
   return _run(containerId, shootingStars, options);
+}
+
+export function startRosePetals(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, rosePetals, options);
+}
+
+export function startFloatingBalloons(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, floatingBalloons, options);
+}
+
+export function startGlobeMovement(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, globeMovement, options);
+}
+
+export function startCherryBlossoms(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, cherryBlossoms, options);
+}
+
+export function startFireflies(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, fireflies, options);
+}
+
+export function startSnowStorm(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, snowStorm, options);
+}
+
+export function startMatrixRain(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, matrixRain, options);
+}
+
+export function startAutumnLeaves(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, autumnLeaves, options);
+}
+
+export function startBubbles(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, bubbles, options);
+}
+
+export function startBlackHole(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, blackHole, options);
+}
+
+export function startAuroraBorealis(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, auroraBorealis, options);
+}
+
+export function startLensFlares(containerId: string | HTMLElement, options: Record<string, any> = {}) {
+  return _run(containerId, lensFlares, options);
 }
 
 // ─── Default export (convenient for UMD / CDN namespace) ──────────────────────
@@ -219,6 +279,18 @@ export default {
   startMagicDust,
   startFloatingOrbs,
   startShootingStars,
+  startRosePetals,
+  startFloatingBalloons,
+  startGlobeMovement,
+  startCherryBlossoms,
+  startFireflies,
+  startSnowStorm,
+  startMatrixRain,
+  startAutumnLeaves,
+  startBubbles,
+  startBlackHole,
+  startAuroraBorealis,
+  startLensFlares,
   stopAnimation,
   stopAll,
 };

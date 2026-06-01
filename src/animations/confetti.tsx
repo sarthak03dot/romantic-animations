@@ -12,10 +12,10 @@ const DEFAULTS = {
   shapes: ['rect', 'circle', 'ribbon'],
 };
 
-export function confetti(canvas, userOptions = {}) {
+export function confetti(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const pieces = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const pieces: any[] = [];
   let running = true;
 
   function createPiece() {
@@ -36,7 +36,7 @@ export function confetti(canvas, userOptions = {}) {
     };
   }
 
-  function drawPiece(p) {
+  function drawPiece(p: any) {
     ctx.save();
     ctx.globalAlpha = p.alpha;
     ctx.fillStyle = p.color;

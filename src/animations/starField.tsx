@@ -11,10 +11,10 @@ const DEFAULTS = {
   connectOpacity: 0.08,
 };
 
-export function starField(canvas, userOptions = {}) {
+export function starField(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const stars = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const stars: any[] = [];
   let running = true;
 
   function createStar(randomY = false) {

@@ -9,10 +9,10 @@ const DEFAULTS = {
   glow: true,
 };
 
-export function floatingOrbs(canvas, userOptions = {}) {
+export function floatingOrbs(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const orbs = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const orbs: any[] = [];
   let running = true;
 
   function createOrb() {

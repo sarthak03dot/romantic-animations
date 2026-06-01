@@ -10,10 +10,10 @@ const DEFAULTS = {
   glow: true,
 };
 
-export function butterflies(canvas, userOptions = {}) {
+export function butterflies(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const items = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const items: any[] = [];
   let running = true;
   let time = 0;
 

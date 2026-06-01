@@ -14,7 +14,7 @@ const DEFAULTS = {
 /**
  * Draw a proper heart shape centred at (cx, cy) with given radius.
  */
-function drawHeartShape(ctx, cx, cy, r, color, alpha = 1, glow = false) {
+function drawHeartShape(ctx: CanvasRenderingContext2D, cx: number, cy: number, r: number, color: string, alpha: number = 1, glow: boolean = false) {
   ctx.save();
   ctx.globalAlpha = alpha;
   if (glow) {
@@ -32,10 +32,10 @@ function drawHeartShape(ctx, cx, cy, r, color, alpha = 1, glow = false) {
   ctx.restore();
 }
 
-export function floatingHearts(canvas, userOptions = {}) {
+export function floatingHearts(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const hearts = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const hearts: any[] = [];
   let running = true;
   let frame = 0;
 

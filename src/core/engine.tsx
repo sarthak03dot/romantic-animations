@@ -15,7 +15,7 @@ const DEFAULT_OPTIONS = {
  * @returns {{ canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D,
  *             options: object, destroy: Function }}
  */
-export function initCanvas(containerIdOrEl, userOptions = {}) {
+export function initCanvas(containerIdOrEl: string | HTMLElement, userOptions: Record<string, any> = {}) {
   const options = Object.assign({}, DEFAULT_OPTIONS, userOptions);
 
   const container =
@@ -58,7 +58,7 @@ export function initCanvas(containerIdOrEl, userOptions = {}) {
   const ro = new ResizeObserver(resize);
   ro.observe(container);
 
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
   /** Tear-down helper – call the returned destroy() to stop & clean up */
   function destroy() {
@@ -72,6 +72,6 @@ export function initCanvas(containerIdOrEl, userOptions = {}) {
 /**
  * Merge user options with animation-specific defaults.
  */
-export function mergeOptions(defaults, userOptions = {}) {
+export function mergeOptions(defaults: Record<string, any>, userOptions: Record<string, any> = {}) {
   return Object.assign({}, defaults, userOptions);
 }

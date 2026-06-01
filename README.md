@@ -15,6 +15,9 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
   </a>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/TypeScript-Ready-blue.svg?logo=typescript" alt="TypeScript Ready" />
+  </a>
   <a href="https://sarthak03dot.github.io/romantic-animations/">
     <img src="https://img.shields.io/badge/Demo-Interactive%20Showcase-ff4d6d.svg" alt="Interactive Showcase" />
   </a>
@@ -31,6 +34,9 @@
 ## Gallery & Screenshots
 
 <div align="center">
+  <h3>✨ Globe & Live Tweaks</h3>
+  <img src="https://raw.githubusercontent.com/sarthak03dot/romantic-animations/main/docs/screenshots/demo4.png" width="100%" />
+
   <h3>✨ Floating Hearts & Live Tweaks</h3>
   <img src="https://raw.githubusercontent.com/sarthak03dot/romantic-animations/main/docs/screenshots/demo1.png" width="100%" />
 
@@ -46,6 +52,7 @@
 ## 🚀 Key Features
 
 * 🚀 **High Performance & Zero Dependencies**: Built directly on raw HTML5 `<canvas>` API with optimal mathematical loop calculations (`requestAnimationFrame`), keeping your bundle size extremely small.
+* 🛡️ **100% TypeScript**: The entire codebase is written in TypeScript, ensuring robust type safety, amazing developer experience, and out-of-the-box intellisense in your IDE.
 * 🌓 **Responsive Dual-Theme Customizer**: Fully styled and responsive landing page that seamlessly toggles between a neon-drenched **Dark Mode** and a clean, high-contrast **Light Mode** for accessibility.
 * 📱 **Touch & Mobile Optimizations**: Fully responsive drawer nav overlays, click-burst triggers for tapping screens, and custom mobile menu structures.
 * 📚 **Collapsible Developer Portal**: Hash-routed playground switcher containing dynamic CDN, Vanilla, React, and Next.js SSR setups.
@@ -121,6 +128,14 @@ Large, soft bokeh globes bouncing gently off the screen boundaries.
 ### 12. `startShootingStars(container, options)`
 Cosmic meteor streaks flashing randomly across the dark skyline.
 
+### 13. `startRosePetals(container, options)` 🆕
+Simulates romantic red and pink rose petals falling and swirling in a gentle breeze. Includes 3D-like flipping effects.
+* **Best for**: Valentine's themes and highly romantic pages.
+
+### 14. `startFloatingBalloons(container, options)` 🆕
+Colorful celebratory balloons that slowly rise from the bottom of the screen with a gentle swaying motion.
+* **Best for**: Birthdays, anniversaries, and checkout success pages.
+
 ---
 
 ## 💻 Integration Guides
@@ -148,16 +163,16 @@ Ensure your container is structured to overlap the viewport properly:
 
 ---
 
-### 2. React Components (Zero-Leak Hooks)
+### 2. React Components (TypeScript / TSX)
 Always clean up your active canvas sessions when components unmount to prevent memory leaks in single-page apps:
 
-```jsx
+```tsx
 import React, { useEffect, useRef } from 'react';
 import { startConfetti, stopAnimation } from '@sarthak03dot/romantic-animations';
 
-export const ConfettiCelebration = () => {
-  const containerRef = useRef(null);
-  const sessionRef = useRef(null);
+export const ConfettiCelebration: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sessionRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -194,7 +209,7 @@ export const ConfettiCelebration = () => {
 ### 3. Next.js Client Integrations (SSR Protection)
 Canvas rendering references the global browser `window` object. Guard imports using a client-side execution block:
 
-```jsx
+```tsx
 'use client';
 
 import React, { useEffect } from 'react';
@@ -203,9 +218,9 @@ export default function LandingPage() {
   useEffect(() => {
     // Dynamic import inside useEffect to safely isolate client-only UMD scripts
     import('@sarthak03dot/romantic-animations').then((lib) => {
-      lib.startShootingStars('shooting-stars-overlay', {
-        speed: 2.5,
-        count: 0.15
+      lib.startRosePetals('romantic-overlay', {
+        minSize: 15,
+        maxSize: 30
       });
     });
   }, []);
@@ -213,7 +228,7 @@ export default function LandingPage() {
   return (
     <div style={{ position: 'relative', minHeight: '100vh', background: '#0b0c10' }}>
       <div 
-        id="shooting-stars-overlay" 
+        id="romantic-overlay" 
         style={{
           position: 'absolute',
           inset: 0,
@@ -243,7 +258,7 @@ Excellent for quick testing inside simple HTML static assets:
   <div id="overlay-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 9999;"></div>
 
   <!-- UMD script loading -->
-  <script src="https://cdn.jsdelivr.net/npm/@sarthak03dot/romantic-animations@1.2.0/dist/romantic-animations.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@sarthak03dot/romantic-animations@1.2.11/dist/romantic-animations.umd.js"></script>
 
   <script>
     // Access via global window namespace
@@ -305,7 +320,7 @@ We welcome bug fixes, enhancement requests, and brand new canvas effect implemen
    ```bash
    npm run dev
    ```
-4. Write your gorgeous animation source codes inside `src/animations/` and wire them into the global entry inside `src/index.js`.
+4. Write your gorgeous animation source codes inside `src/animations/` and wire them into the global entry inside `src/index.tsx`.
 5. Run the production build validation:
    ```bash
    npm run build

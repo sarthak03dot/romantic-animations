@@ -9,10 +9,10 @@ const DEFAULTS = {
   glow: true,
 };
 
-export function magicDust(canvas, userOptions = {}) {
+export function magicDust(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const dusts = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const dusts: any[] = [];
   let running = true;
   let time = 0;
 

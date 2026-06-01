@@ -13,7 +13,7 @@ const DEFAULTS = {
   symbols: ['heart'], // 'heart' | 'star' | 'sparkle'
 };
 
-function drawSymbol(ctx, type, cx, cy, r, color, alpha, glow) {
+function drawSymbol(ctx: CanvasRenderingContext2D, type: string, cx: number, cy: number, r: number, color: string, alpha: number, glow: boolean) {
   ctx.save();
   ctx.globalAlpha = Math.max(0, alpha);
   if (glow) { ctx.shadowColor = color; ctx.shadowBlur = r * 2; }
@@ -50,13 +50,13 @@ function drawSymbol(ctx, type, cx, cy, r, color, alpha, glow) {
   ctx.restore();
 }
 
-export function heartBurst(canvas, userOptions = {}) {
+export function heartBurst(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const particles = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const particles: any[] = [];
   let running = true;
 
-  function spawnBurst(x, y) {
+  function spawnBurst(x: number, y: number) {
     for (let i = 0; i < opts.count; i++) {
       const angle = Math.random() * Math.PI * 2;
       const speed = opts.minSpeed + Math.random() * (opts.maxSpeed - opts.minSpeed);
@@ -73,13 +73,13 @@ export function heartBurst(canvas, userOptions = {}) {
     }
   }
 
-  const onClick = (e) => {
+  const onClick = (e: any) => {
     const rect = canvas.getBoundingClientRect();
     spawnBurst(e.clientX - rect.left, e.clientY - rect.top);
   };
-  const onTouch = (e) => {
+  const onTouch = (e: any) => {
     const rect = canvas.getBoundingClientRect();
-    Array.from(e.changedTouches).forEach((t) => spawnBurst(t.clientX - rect.left, t.clientY - rect.top));
+    Array.from(e.changedTouches).forEach((t: any) => spawnBurst(t.clientX - rect.left, t.clientY - rect.top));
   };
 
   window.addEventListener('click', onClick);

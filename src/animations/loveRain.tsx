@@ -12,10 +12,10 @@ const DEFAULTS = {
   glow: true,
 };
 
-export function loveRain(canvas, userOptions = {}) {
+export function loveRain(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const drops = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const drops: any[] = [];
   let running = true;
 
   function createDrop() {

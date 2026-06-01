@@ -10,24 +10,23 @@ const DEFAULTS = {
   glow: true,
 };
 
-export function fireworks(canvas, userOptions = {}) {
+export function fireworks(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
   let running = true;
 
-  const rockets = [];    // { x, y, vx, vy, trail[], color }
-  const particles = [];  // burst particles
+  const rockets: any[] = [];    // { x, y, vx, vy, trail[], color }
+  const particles: any[] = [];  // burst particles
 
   function launchRocket() {
     const x = canvas.width * (0.2 + Math.random() * 0.6);
     const targetY = canvas.height * (0.1 + Math.random() * 0.4);
-    const dy = targetY - canvas.height;
     const speed = 8 + Math.random() * 5;
     const color = opts.colors[Math.floor(Math.random() * opts.colors.length)];
     rockets.push({ x, y: canvas.height, vy: -Math.abs(speed), targetY, trail: [], color });
   }
 
-  function burst(x, y, color) {
+  function burst(x: number, y: number, color: string) {
     for (let i = 0; i < opts.particleCount; i++) {
       const angle = Math.random() * Math.PI * 2;
       const speed = 1 + Math.random() * 5;

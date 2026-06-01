@@ -8,7 +8,7 @@ const DEFAULTS = {
   glow: true,
 };
 
-function drawHeart(ctx, cx, cy, r, color, alpha, glow) {
+function drawHeart(ctx: CanvasRenderingContext2D, cx: number, cy: number, r: number, color: string, alpha: number, glow: boolean) {
   ctx.save();
   ctx.globalAlpha = Math.max(0, alpha);
   if (glow) {
@@ -24,13 +24,13 @@ function drawHeart(ctx, cx, cy, r, color, alpha, glow) {
   ctx.restore();
 }
 
-export function heartTrail(canvas, userOptions = {}) {
+export function heartTrail(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const hearts = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const hearts: any[] = [];
   let running = true;
 
-  function addHeart(x, y) {
+  function addHeart(x: number, y: number) {
     hearts.push({
       x,
       y,
@@ -43,15 +43,15 @@ export function heartTrail(canvas, userOptions = {}) {
   }
 
   // Mouse support
-  const onMouseMove = (e) => {
+  const onMouseMove = (e: any) => {
     const rect = canvas.getBoundingClientRect();
     addHeart(e.clientX - rect.left, e.clientY - rect.top);
   };
 
   // Touch support
-  const onTouchMove = (e) => {
+  const onTouchMove = (e: any) => {
     const rect = canvas.getBoundingClientRect();
-    Array.from(e.touches).forEach((t) => {
+    Array.from(e.touches).forEach((t: any) => {
       addHeart(t.clientX - rect.left, t.clientY - rect.top);
     });
   };

@@ -10,10 +10,10 @@ const DEFAULTS = {
   glow: true,
 };
 
-export function sparkles(canvas, userOptions = {}) {
+export function sparkles(canvas: HTMLCanvasElement, userOptions: Record<string, any> = {}) {
   const opts = mergeOptions(DEFAULTS, userOptions);
-  const ctx = canvas.getContext('2d');
-  const stars = [];
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const stars: any[] = [];
   let running = true;
 
   function createStar() {
@@ -33,7 +33,7 @@ export function sparkles(canvas, userOptions = {}) {
   // Populate initial stars
   for (let i = 0; i < opts.count; i++) stars.push(createStar());
 
-  function drawStar(s) {
+  function drawStar(s: any) {
     ctx.save();
     ctx.globalAlpha = Math.max(0, Math.min(1, s.alpha));
     if (opts.glow) { ctx.shadowColor = s.color; ctx.shadowBlur = s.size * 3; }
