@@ -1,4 +1,4 @@
-# 💖 Romantic Animations v2.0.1
+# 💖 Romantic Animations v2.0.2
 
 <p align="center">
   <b>A premium, lightweight, zero-dependency JavaScript canvas particle library for gorgeous romantic & celebratory effects.</b>
@@ -258,7 +258,7 @@ Excellent for quick testing inside simple HTML static assets:
   <div id="overlay-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 9999;"></div>
 
   <!-- UMD script loading -->
-  <script src="https://cdn.jsdelivr.net/npm/@sarthak03dot/romantic-animations@2.0.1/dist/romantic-animations.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@sarthak03dot/romantic-animations@2.0.2/dist/romantic-animations.umd.js"></script>
 
   <script>
     // Access via global window namespace
