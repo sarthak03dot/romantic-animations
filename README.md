@@ -1,4 +1,4 @@
-# 💖 Romantic Animations v1.2.11
+# 💖 Romantic Animations v2.0.0
 
 <p align="center">
   <b>A premium, lightweight, zero-dependency JavaScript canvas particle library for gorgeous romantic & celebratory effects.</b>
@@ -35,7 +35,7 @@
 
 <div align="center">
   <h3>✨ Globe & Live Tweaks</h3>
-  <img src="https://raw.githubusercontent.com/sarthak03dot/romantic-animations/main/docs/screenshots/demo4.png" width="100%" />
+  <img src="https://raw.githubusercontent.com/sarthak03dot/romantic-animations/main/docs/screenshots/demp4.png" width="100%" />
 
   <h3>✨ Floating Hearts & Live Tweaks</h3>
   <img src="https://raw.githubusercontent.com/sarthak03dot/romantic-animations/main/docs/screenshots/demo1.png" width="100%" />
@@ -258,7 +258,7 @@ Excellent for quick testing inside simple HTML static assets:
   <div id="overlay-container" style="position: fixed; inset: 0; pointer-events: none; z-index: 9999;"></div>
 
   <!-- UMD script loading -->
-  <script src="https://cdn.jsdelivr.net/npm/@sarthak03dot/romantic-animations@1.2.11/dist/romantic-animations.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@sarthak03dot/romantic-animations@2.0.0/dist/romantic-animations.umd.js"></script>
 
   <script>
     // Access via global window namespace
